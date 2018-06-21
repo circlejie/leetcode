@@ -7,10 +7,10 @@
 int romanToInt(char* s) 
 {
     int n,i,value=0;
-    n=strlen(s);
+    n=strlen(s); //just the number of all characters
     int *a;
-    a=(int*)malloc(sizeof(int)*n);
-    for(i=0;i<n;i++)
+    a=(int*)malloc(sizeof(int)*n); //dynamic memory allocation
+    for(i=0;i<n;i++)    //assign every element in array_a a value according to s
     {
         switch (s[i])
         {
@@ -37,9 +37,9 @@ int romanToInt(char* s)
                 break;
         }
     }
-    for(i=0;i<n;i++)
+    for(i=0;i<n;i++)  //sum according to different conditions
     {
-        if(a[i+1]>a[i]&&i<n-1)
+        if(a[i+1]>a[i]&&i<n-1) 
             value+=(-a[i]);
         else
             value+=a[i];
